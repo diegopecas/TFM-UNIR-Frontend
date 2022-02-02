@@ -1,0 +1,12 @@
+<!--<form [formGroup]="cmform">-->
+  <div class="form-group">
+    <label>{{ _pregunta?.nombre }}</label><br/>
+    <div class="form-check" *ngFor="let opc of _opciones; let i = index">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" value="">{{ opc }}
+      </label>
+    </div>
+  </div>
+  <!--
+  </form>
+  -->

@@ -1,0 +1,154 @@
+<div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info text-center w-100">
+            <i class="far fa-user"></i>
+            <h5>Usuario</h5>
+            <sub><a [routerLink]="'/login'">(salir)</a></sub>
+        </div>
+    </div>
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+        data-accordion="false">
+            <li class="nav-item menu-open">
+                <a class="nav-link">
+                    <em class="nav-icon fas fa-cogs"></em>
+                    <p>
+                        Análisis
+                        <em class="right fas fa-angle-left"></em>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview pl-3">
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/pruebas/disponibles'">
+                            <em class="far fa-folder-open mr-2"></em>
+                            <p>Realizar prueba</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/pruebas/historico-usuario'">
+                            <em class="far fa-folder-open mr-2"></em>
+                            <p>Históricos</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item menu-open">
+                <a class="nav-link">
+                    <em class="nav-icon fas fa-cogs"></em>
+                    <p>
+                        Configuración
+                        <em class="right fas fa-angle-left"></em>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview pl-3">
+                    <!--<li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/configuracion/dominios'">
+                            <em class="far fa-folder-open mr-2"></em>
+                            <p>Dominios</p>
+                        </a>
+                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/configuracion/pruebas'">
+                            <em class="far fa-folder-open mr-2"></em>
+                            <p>Pruebas</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item menu-open">
+                <a class="nav-link">
+                    <em class="nav-icon fas fa-cogs"></em>
+                    <p>
+                        Seguridad
+                        <em class="right fas fa-angle-left"></em>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview pl-3">
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/seguridad/permisos'">
+                            <em class="far fa-folder-open mr-2"></em>
+                            <p>Permisos</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/seguridad/roles'">
+                            <em class="far fa-folder-open mr-2"></em>
+                            <p>Roles</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/seguridad/usuarios'">
+                            <em class="far fa-folder-open mr-2"></em>
+                            <p>Usuarios</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!--<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+            data-accordion="false">
+            <li class="nav-item menu-open">
+                <a href="#" class="nav-link">
+                    <em class="nav-icon fas fa-cogs"></em>
+                    <p>
+                        Configuración
+                        <em class="right fas fa-angle-left"></em>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview pl-3">
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'configuracion/ejemplo'">
+                            <em class="far fa-folder-open mr-2"></em>
+                            <p>Ejemplo</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'configuracion/dominios'">
+                            <em class="fas fa-table mr-2"></em>
+                            <p>Dominios</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['configuracion/parametros']">
+                            <em class="fas fa-cubes mr-2"></em>
+                            <p>Parámetros</p>
+                        </a>
+                    </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link">
+                            <em class="fas fa-unlock mr-2"></em>
+                            <p>
+                                Seguridad
+                                <em class="right fas fa-angle-left"></em>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview pl-3">
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="['configuracion/seguridad/roles']">
+                                    <em class="fas fa-user-lock mr-2"></em>
+                                    <p>Roles</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview pl-3">
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="['configuracion/seguridad/roles']">
+                                    <em class="fas fa-users mr-2"></em>
+                                    <p>Usuarios</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview pl-3">
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="['configuracion/seguridad/roles']">
+                                    <em class="fas fa-key mr-2"></em>
+                                    <p>Permisos</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>-->
+    </nav>
+</div>

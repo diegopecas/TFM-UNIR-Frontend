@@ -1,0 +1,158 @@
+.
+├── README.md
+├── angular.json
+├── arbol.txt
+├── dist
+├── karma.conf.js
+├── node_modules
+├── package-lock.json
+├── package.json
+├── sonar-project.properties
+├── src
+│   ├── app
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   ├── common
+│   │   │   ├── guards
+│   │   │   │   ├── role.guard.ts
+│   │   │   │   └── sesion.guard.ts
+│   │   │   ├── layout
+│   │   │   │   ├── footer
+│   │   │   │   │   ├── footer.component.html
+│   │   │   │   │   ├── footer.component.spec.ts
+│   │   │   │   │   └── footer.component.ts
+│   │   │   │   ├── header
+│   │   │   │   │   ├── header.component.html
+│   │   │   │   │   ├── header.component.spec.ts
+│   │   │   │   │   └── header.component.ts
+│   │   │   │   ├── layout.module.ts
+│   │   │   │   ├── menu-izquierdo
+│   │   │   │   │   ├── menu-izquierdo.component.html
+│   │   │   │   │   └── menu-izquierdo.component.ts
+│   │   │   │   └── navbar
+│   │   │   │       ├── navbar.component.html
+│   │   │   │       ├── navbar.component.spec.ts
+│   │   │   │       └── navbar.component.ts
+│   │   │   ├── tables
+│   │   │   │   ├── data-table.ts
+│   │   │   │   ├── datatable.component.html
+│   │   │   │   ├── datatable.component.ts
+│   │   │   │   └── datatable.module.ts
+│   │   │   └── utils
+│   │   │       ├── handlerexception.ts
+│   │   │       └── language-table.ts
+│   │   ├── modulos
+│   │   │   ├── configuracion
+│   │   │   │   ├── configuracion-routing.module.ts
+│   │   │   │   ├── configuracion.component.html
+│   │   │   │   ├── configuracion.component.ts
+│   │   │   │   ├── configuracion.module.ts
+│   │   │   │   ├── dominios
+│   │   │   │   │   ├── consultar-dominios
+│   │   │   │   │   │   ├── consultar-dominios.component.html
+│   │   │   │   │   │   └── consultar-dominios.component.ts
+│   │   │   │   │   ├── guardar-dominios
+│   │   │   │   │   │   ├── guardar-dominios.component.html
+│   │   │   │   │   │   └── guardar-dominios.component.ts
+│   │   │   │   │   └── servicios-dominios.service.ts
+│   │   │   │   └── pruebas
+│   │   │   │       ├── consultar-pruebas
+│   │   │   │       │   ├── consultar-pruebas.component.html
+│   │   │   │       │   └── consultar-pruebas.component.ts
+│   │   │   │       └── guardar-pruebas
+│   │   │   │           ├── guardar-pruebas.component.html
+│   │   │   │           └── guardar-pruebas.component.ts
+│   │   │   ├── login
+│   │   │   │   ├── login.component.css
+│   │   │   │   ├── login.component.html
+│   │   │   │   ├── login.component.ts
+│   │   │   │   └── login.module.ts
+│   │   │   ├── pruebas
+│   │   │   │   ├── ejecutar-prueba
+│   │   │   │   │   ├── ejecutar-prueba.component.html
+│   │   │   │   │   ├── ejecutar-prueba.component.ts
+│   │   │   │   │   ├── paso-1
+│   │   │   │   │   │   ├── paso-1.component.html
+│   │   │   │   │   │   └── paso-1.component.ts
+│   │   │   │   │   ├── paso-2
+│   │   │   │   │   │   ├── paso-2.component.html
+│   │   │   │   │   │   └── paso-2.component.ts
+│   │   │   │   │   ├── paso-3
+│   │   │   │   │   │   ├── paso-3.component.html
+│   │   │   │   │   │   └── paso-3.component.ts
+│   │   │   │   │   ├── paso-4
+│   │   │   │   │   │   ├── paso-4.component.html
+│   │   │   │   │   │   └── paso-4.component.ts
+│   │   │   │   │   ├── paso-5
+│   │   │   │   │   │   ├── paso-5.component.html
+│   │   │   │   │   │   └── paso-5.component.ts
+│   │   │   │   │   └── resultado
+│   │   │   │   │       ├── resultado.component.html
+│   │   │   │   │       └── resultado.component.ts
+│   │   │   │   ├── historico-usuario
+│   │   │   │   │   ├── historico-usuario.component.html
+│   │   │   │   │   └── historico-usuario.component.ts
+│   │   │   │   ├── pruebas-routing.module.ts
+│   │   │   │   ├── pruebas.component.html
+│   │   │   │   ├── pruebas.component.ts
+│   │   │   │   └── pruebas.module.ts
+│   │   │   ├── seguridad
+│   │   │   │   ├── permisos
+│   │   │   │   │   ├── consultar-permisos
+│   │   │   │   │   │   ├── consultar-permisos.component.html
+│   │   │   │   │   │   └── consultar-permisos.component.ts
+│   │   │   │   │   └── servicios-permisos.service.ts
+│   │   │   │   ├── roles
+│   │   │   │   │   ├── consultar-roles
+│   │   │   │   │   │   ├── consultar-roles.component.html
+│   │   │   │   │   │   └── consultar-roles.component.ts
+│   │   │   │   │   ├── guardar-roles
+│   │   │   │   │   │   ├── guardar-roles.component.html
+│   │   │   │   │   │   └── guardar-roles.component.ts
+│   │   │   │   │   └── servicios-roles.service.ts
+│   │   │   │   ├── seguridad-routing.module.ts
+│   │   │   │   ├── seguridad.component.html
+│   │   │   │   ├── seguridad.component.ts
+│   │   │   │   ├── seguridad.module.ts
+│   │   │   │   └── usuarios
+│   │   │   │       ├── consultar-usuarios
+│   │   │   │       │   ├── consultar-usuarios.component.html
+│   │   │   │       │   └── consultar-usuarios.component.ts
+│   │   │   │       ├── guardar-usuarios
+│   │   │   │       │   ├── guardar-usuarios.component.html
+│   │   │   │       │   └── guardar-usuarios.component.ts
+│   │   │   │       └── servicios-usuarios.service.ts
+│   │   │   └── usuario
+│   │   │       ├── inicio
+│   │   │       │   ├── inicio.component.html
+│   │   │       │   ├── inicio.component.spec.ts
+│   │   │       │   └── inicio.component.ts
+│   │   │       ├── usuario-routing.module.ts
+│   │   │       ├── usuario.component.html
+│   │   │       ├── usuario.component.ts
+│   │   │       └── usuario.module.ts
+│   │   └── pagenotfound
+│   │       ├── pagenotfound.component.html
+│   │       ├── pagenotfound.component.spec.ts
+│   │       └── pagenotfound.component.ts
+│   ├── assets
+│   │   ├── adminlte
+│   │   ├── fondo.jpg
+│   │   ├── fonts
+│   │   └── logos
+│   ├── environments
+│   │   ├── environment.prod.ts
+│   │   └── environment.ts
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   ├── polyfills.ts
+│   ├── styles.scss
+│   └── test.ts
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json
+
+6041 directories, 49038 files

@@ -1,0 +1,18 @@
+<form [formGroup]="SiNoform">
+  <div class="form-group">
+    <label>{{ _pregunta?.id }} - {{ _pregunta?.nombre }}</label
+    ><br />
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" formControlName="respuesta" [value]="'Si'" />Sí
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" formControlName="respuesta" [value]="'No'" />No
+      </label>
+    </div>
+    <!--<label *ngIf="respuesta?.value" class="text-success">Aprobado</label>
+    <label *ngIf="!respuesta?.value && respuesta?.value != null" class="text-danger">No Aprobado</label>-->
+  </div>
+</form>

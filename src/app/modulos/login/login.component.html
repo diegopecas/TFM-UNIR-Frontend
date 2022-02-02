@@ -1,0 +1,42 @@
+<div class="wrapper fadeInDown fondo-paisaje">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first mt-5">
+      <!--<i class="far fa-user"></i>-->
+      <img src="assets/images/LogoIAPA.jpg" class="img-fluid" />
+      <h3>Herramienta para validación de candidatura de OMEC</h3>
+    </div>
+
+    <!-- Login Form -->
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" *ngIf="accion === 'login'">
+      <input
+        type="text"
+        id="user"
+        class="fadeIn second"
+        name="user"
+        placeholder="user"
+		formControlName="user"
+      />
+      <input
+        type="password"
+        id="password"
+        class="fadeIn third"
+        name="password"
+        placeholder="password"
+		formControlName="password"
+      />
+      <input type="submit" class="fadeIn fourth" value="Ingresar" />
+    </form>
+
+    <ng-container *ngIf="accion === 'registro'">
+      <app-registro (accion)="accionRegistro($event)"></app-registro>
+    </ng-container>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a *ngIf="accion === 'login'" class="underlineHover" (click)="registrar()">Registrarse</a><a *ngIf="accion === 'registro'" class="underlineHover" (click)="cancelar()">Iniciar sesión</a> | <a class="underlineHover">Olvidó su contraseña?</a>
+    </div>
+  </div>
+</div>

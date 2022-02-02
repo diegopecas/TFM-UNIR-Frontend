@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="registroForm">
+  <input
+    type="email"
+    id="user"
+    class="fadeIn second"
+    placeholder="Ingrese su usuario"
+    formControlName="user"
+    required
+  />
+  <input
+    type="password"
+    id="password"
+    class="fadeIn third"
+    placeholder="Ingrese su contraseña"
+    formControlName="password"
+    required
+  />
+  <input
+    type="password"
+    id="re-password"
+    class="fadeIn third"
+    placeholder="Ingrese de nuevo su contraseña"
+    formControlName="rePassword"
+    required
+  />
+  <input type="submit" class="fadeIn fourth" value="Registrarse" />
+</form>

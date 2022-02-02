@@ -1,0 +1,127 @@
+<div class="row text-right sish-miga-de-pan">
+  <div class="col-md-12 text-right">
+    <ol class="breadcrumb float-sm-right sish-miga-de-pan">
+      <li class="breadcrumb-item active">Análisis</li>
+      <li class="breadcrumb-item">Ejecutar prueba</li>
+    </ol>
+  </div>
+</div>
+<div class="container-fluid bg-white pt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="sish-titulo-formulario">
+        Ejecutar prueba: {{ prueba?.nombre }}
+      </h2>
+      <hr />
+    </div>
+  </div>
+  <div class="row p-5" *ngIf="estado === 'inicio'">
+    <div class="col-md-12 text-justify">
+      <div [innerHTML]="prueba?.descripcion"></div>
+    </div>
+    <div class="col-md-12 text-center">
+      <button class="btn btn-md btn-success" (click)="iniciar()">
+        INICIAR
+      </button>
+    </div>
+  </div>
+  <ng-container *ngIf="prueba?.pasos !== undefined && prueba?.pasos !== []">
+    <div class="row" *ngIf="estado === 'ejecucion'">
+      <div class="col-md-12">
+        <div id="stepper1" class="bs-stepper" #stepper1>
+          <div class="bs-stepper-header">
+            <ng-container *ngFor="let paso of prueba.pasos; let i = index">
+              <div [ngClass]="pasoActivo === i ? 'step active' : 'step'">
+                <button class="step-trigger">
+                  <span class="bs-stepper-circle">{{ i + 1 }}</span>
+                  <!--<span class="bs-stepper-label">{{ paso.nombre }}</span>-->
+                </button>
+              </div>
+
+              <div
+                *ngIf="i + 1 < (prueba?.pasos?.length || 0)"
+                class="line"
+              ></div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <app-paso
+          *ngIf="pasoVista !== {}"
+          [prueba]="prueba"
+          [paso]="pasoVista"
+          (accion)="accionPaso($event)"
+        ></app-paso>
+      </div>
+      <!--<div class="col-md-12" *ngIf="pasoActivo < (prueba?.pasos?.length || 0)">
+        <ng-container *ngIf="prueba !== undefined">
+
+          <app-paso
+            [prueba]="prueba"
+            [paso]="prueba.pasos[pasoActivo]"
+            (accion)="accionPaso($event)"
+          ></app-paso>
+        </ng-container>
+      </div>-->
+    </div>
+  </ng-container>
+  <div class="row" *ngIf="estado === 'resumen'">
+    <div class="col-md-12">
+      <p class="sish-subtitulo-formulario text-center">RESULTADO</p>
+    </div>
+    <div class="col-md-12 pb-5">
+      <ng-container *ngFor="let paso of prueba.pasos; let i = index">
+        <h2 class="sish-subtitulo2-formulario">Prueba: {{ paso.nombre }}</h2>
+        <table class="fao-tabla pb-5">
+          <thead>
+            <tr>
+              <th class="w-50">Prueba</th>
+              <th class="w-40">Respuesta</th>
+              <th class="w-10">Recomendación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pr of paso.preguntas">
+              <td>{{ pr.nombre }}</td>
+              <ng-container *ngIf="pr.tipo === '0'">
+                <td class="text-center">N/A</td>
+                <td>N/A</td>
+              </ng-container>
+              <ng-container *ngIf="pr.tipo === '1'">
+                <td class="text-center">{{ buscarRespuesta(pr.id) }}</td>
+                <td>{{ buscarRespuesta(pr.id) === 'Si' ? <i class="far fa-thumbs-up text-success"></i> : <i class="fas fa-times"></i> }}</td>
+              </ng-container>
+              <ng-container *ngIf="pr.tipo === '2'">
+                <td class="text-center">
+                  {{ buscarRespuesta(pr.id) }}
+                </td>
+                <td>{{ buscarRespuesta(pr.id).length > 0 ? 'Aprobado' : 'No aprobado' }}</td>
+              </ng-container>
+              <ng-container *ngIf="pr.tipo === '3'">
+                <td class="text-center">
+                  {{ buscarRespuesta(pr.id) }}
+                </td>
+                <td>N/A</td>
+              </ng-container>
+              <ng-container *ngIf="pr.tipo === '4'">
+                <td class="text-center">
+                  {{ buscarRespuesta(pr.id) }}
+                </td>
+                <td>{{ buscarRespuesta(pr.id).length > 0 ? 'Aprobado' : 'No aprobado' }}</td>
+              </ng-container>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <br />
+        <br />
+      </ng-container>
+    </div>
+    <div class="col-md-12 text-center pb-5">
+      <button class="btn btn-sm btn-primary" (click)="reset()">
+        EJECUTAR NUEVAMENTE
+      </button>
+    </div>
+  </div>
+</div>

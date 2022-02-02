@@ -1,0 +1,40 @@
+<div class="container-fluid mt-5 mb-5" *ngIf="_paso">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="sish-subtitulo-formulario">Prueba: {{ _paso.nombre }}</p>
+        </div>
+        <div class="col-md-4">
+            <div [innerHTML]="_paso.descripcion"></div>
+        </div>
+        <div class="col-md-8" *ngIf="_preguntas">
+            <ng-container *ngFor="let item of _preguntas">
+                <ng-container *ngIf="item.tipo === '0'">
+                    <app-mapa></app-mapa>
+                </ng-container>
+                <ng-container *ngIf="item.tipo === '1'">
+                    <app-pregunta-sino [prueba]="prueba" [paso]="paso" [pregunta]="item" (accion)="recibirRespuesta($event)"></app-pregunta-sino>
+                </ng-container>
+                <ng-container *ngIf="item.tipo === '2'">
+                    <app-pregunta-cerrada [pregunta]="item"></app-pregunta-cerrada>
+                </ng-container>
+                <ng-container *ngIf="item.tipo === '3'">
+                    <app-pregunta-abierta [pregunta]="item"></app-pregunta-abierta>
+                </ng-container>
+                <ng-container *ngIf="item.tipo === '4'">
+                    <app-pregunta-cerrada-multi [pregunta]="item"></app-pregunta-cerrada-multi>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-sm btn-block btn-warning" (click)="anterior()">Anterior</button>
+        </div>
+        <div class="offset-md-8 col-md-2">
+            <button class="btn btn-sm btn-block btn-warning" (click)="siguiente()">Siguiente</button>
+        </div>
+    </div>
+</div>

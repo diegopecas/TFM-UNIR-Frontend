@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<aside
+  aria-label="Encabezado"
+  class="main-sidebar fao-linea-usuario fao-barra-lateral elevation-4"
+>
+  <a [routerLink]="'inicio'" class="brand-link text-center">
+    <span class="brand-text font-weight-bold fao-titulo-logo">OMEC</span>
+    <hr />
+  </a>
+  <app-menu-izquierdo></app-menu-izquierdo>
+</aside>
+<div class="content-wrapper">
+  <router-outlet></router-outlet>
+</div>
+<aside
+  aria-label="Barra de menu superior"
+  class="control-sidebar control-sidebar-dark"
+></aside>
+<app-footer></app-footer>
+usuario
